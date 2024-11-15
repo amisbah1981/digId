@@ -1,132 +1,122 @@
-DIGITAL IDENTITY VERIFICATION AND ID CARD CREATION
-==================================================
+DIGITAL IDENTITY SYSTEM
+=======================
 
-This project implements a secure and standards-compliant system for verifying identity 
-and creating physical ID cards. The system integrates identity verification using a 
-Verifiable Credential (VC) with physical card creation following real-world standards 
-like ICAO Doc 9303 and ISO/IEC 7810.
+This project implements a comprehensive and secure system for managing digital identities. It includes:
 
-==================================================
+1. **Verifiable Credential (VC) Creation**: Standards-compliant digital credentials based on W3C guidelines.
+2. **Digital Document Creation**: Generates Mobile Driver's Licenses (mDLs) and ePassports.
+3. **Identity Verification**: Uses biometric data to authenticate identities.
+4. **Physical ID Card Creation**: Generates real-world physical ID cards with MRZ and embedded digital data.
+
+=======================
 FEATURES
-==================================================
+=======================
 
-1. IDENTITY VERIFICATION
-   - Validates the VC's digital signature using RSA.
-   - Decrypts biometric data stored in the VC (AES-256 encrypted).
-   - Verifies live biometric samples (face, fingerprint, iris) against the VC.
+1. **VERIFIABLE CREDENTIAL CREATION**
+   - Compliant with **W3C Verifiable Credentials** standards.
+   - Secures biometric data using AES-256 encryption.
+   - Digitally signs credentials with RSA for integrity.
 
-2. ID CARD CREATION
-   - Generates a standards-compliant physical ID card with:
-     - Personal details (name, DOB, nationality, passport number).
-     - Machine-Readable Zone (MRZ) adhering to ICAO Doc 9303.
-     - QR code embedding the VC for verification.
-     - Photo and security background.
+2. **DIGITAL DOCUMENT CREATION**
+   - Generates Mobile Driver's Licenses (mDLs) adhering to **ISO/IEC 18013-5**.
+   - Creates ePassports in line with **ICAO Doc 9303** standards.
 
-==================================================
+3. **IDENTITY VERIFICATION**
+   - Validates digital signatures on VCs using RSA.
+   - Matches encrypted biometric data with live samples.
+
+4. **PHYSICAL ID CARD CREATION**
+   - Compliant with **ISO/IEC 7810** for ID-1 card dimensions.
+   - Includes Machine Readable Zone (MRZ) and QR codes for embedded VC data.
+
+=======================
 STANDARDS AND LIBRARIES
-==================================================
+=======================
 
-1. STANDARDS
-   - W3C Verifiable Credentials: For structuring identity credentials.
-   - ICAO Doc 9303: Specifies MRZ formatting for machine-readable travel documents.
-   - ISO/IEC 7810: ID-1 format (85.6 mm × 53.98 mm) for physical ID cards.
-   - ISO/IEC 27001: AES-256 encryption for securing biometric data.
+1. **STANDARDS**
+   - **W3C Verifiable Credentials**: For structuring digital identity.
+   - **ISO/IEC 18013-5**: Guidelines for mobile driver's licenses.
+   - **ICAO Doc 9303**: Defines MRZ formatting for travel documents.
+   - **ISO/IEC 7810**: Specifies ID-1 card dimensions.
+   - **ISO/IEC 27001**: Ensures data security through AES-256 encryption.
 
-2. LIBRARIES
-   - Pillow: For creating and designing the ID card.
-   - qrcode: For generating QR codes to embed VCs.
+2. **LIBRARIES**
+   - Pillow: For designing and creating ID cards.
+   - qrcode: For embedding VCs as QR codes.
    - cryptography: For RSA signing, AES encryption, and decryption.
-   - hashlib: For hashing biometric samples (SHA-256).
-   - json: For handling and storing VC data.
+   - hashlib: For hashing biometric samples with SHA-256.
+   - json: For handling structured VC data.
 
-==================================================
+=======================
 PROJECT STRUCTURE
-==================================================
+=======================
 
 project-root/
-├── validate_and_create_card.py    # Main script for verification and ID creation
-├── ePassport_b02bea3f-6bd5-4583-98f9-d5baa9cf118d.json # Example VC
+├── DigVC.py                       # Script for Verifiable Credential creation
+├── DigDocCreation.py              # Script for creating digital documents
+├── DigIdUsage.py                  # Script for verifying and using digital documents
 ├── synthetic_human_face.png       # Example face image
 ├── synthetic_human_fingerprint.png # Example fingerprint image
 ├── synthetic_human_iris.png       # Example iris image
 ├── publicKey.pem                  # Public key for VC verification
-├── Standard_Physical_ID_Card.png  # Generated ID card output
 ├── LICENSE                        # GPL v3 license
 ├── README.txt                     # Project documentation
 
-==================================================
+=======================
 INSTALLATION
-==================================================
+=======================
 
-1. CLONE THE REPOSITORY
-   git clone https://github.com/your-username/digital-id-system.git
-   cd digital-id-system
+1. Clone the repository to your system.
+2. Install the required Python libraries: Pillow, cryptography, and qrcode.
 
-2. INSTALL DEPENDENCIES
-   This project requires Python 3.x and the following libraries:
-   pip install Pillow cryptography qrcode
-
-==================================================
+=======================
 USAGE
-==================================================
+=======================
 
-1. IDENTITY VERIFICATION AND CARD CREATION
-   Run the script to verify identity using the VC and generate a physical ID card:
-   python validate_and_create_card.py
+### 1. **VERIFIABLE CREDENTIAL CREATION**
+- Run the script for VC creation (DigVC.py).
+- Input biometric images and personal details.
+- Outputs a standards-compliant JSON file representing the VC.
 
-2. INPUTS
-   - VC JSON: `ePassport_b02bea3f-6bd5-4583-98f9-d5baa9cf118d.json` (contains personal details and encrypted biometric data).
-   - Public Key: `publicKey.pem` (for verifying the VC's digital signature).
-   - Biometric Images:
-     - `synthetic_human_face.png`
-     - `synthetic_human_fingerprint.png`
-     - `synthetic_human_iris.png`
+### 2. **DIGITAL DOCUMENT CREATION**
+- Run the document creation script (DigDocCreation.py) to generate Mobile Driver's Licenses and ePassports.
+- Outputs JSON files representing the created documents.
 
-3. OUTPUT
-   - Generated Card: `Standard_Physical_ID_Card.png`
+### 3. **IDENTITY VERIFICATION**
+- Run the identity verification script (DigIdUsage.py).
+- Verifies the provided VC and matches it against live biometric samples.
 
-==================================================
-HOW IT WORKS
-==================================================
+### 4. **PHYSICAL ID CARD CREATION**
+- The system generates a physical ID card based on ISO/IEC 7810 standards.
+- Includes personal details, photo, MRZ, and QR code for verification.
 
-1. IDENTITY VERIFICATION
-   - Step 1: The VC is loaded and its RSA signature is verified.
-   - Step 2: Encrypted biometric data in the VC is decrypted using AES-256.
-   - Step 3: Live biometric samples are hashed and compared to the decrypted VC data.
-
-2. ID CARD CREATION
-   - Step 4: A physical ID card is generated, including:
-     - Photo and personal details.
-     - Machine-readable MRZ (ICAO Doc 9303 format).
-     - QR code embedding the VC.
-
-==================================================
+=======================
 SECURITY CONSIDERATIONS
-==================================================
+=======================
 
-1. KEY MANAGEMENT
-   - The private key used for signing the VC should be stored securely.
-   - The public key (`publicKey.pem`) is used for verification and can be distributed.
+1. **KEY MANAGEMENT**
+   - Private keys used for signing must be securely stored.
+   - Public keys can be distributed for verification purposes.
 
-2. DATA SECURITY
-   - Biometric data is AES-256 encrypted for confidentiality.
-   - MRZ and QR codes are designed for interoperability and machine readability.
+2. **DATA SECURITY**
+   - Biometric data is encrypted with AES-256 to ensure confidentiality.
+   - MRZ and QR codes enable machine-readable and interoperable identity verification.
 
-3. REAL-TIME VERIFICATION
-   - Live biometric samples ensure the person presenting the card matches the VC data.
+3. **REAL-TIME VERIFICATION**
+   - Live biometric samples ensure the person presenting the document matches the identity.
 
-==================================================
+=======================
 EXAMPLE MRZ
-==================================================
+=======================
 
 For an ePassport, the MRZ lines might look like:
 
 P<DOE<<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<
 987654321<USA19900101<M20341112<
 
-==================================================
+=======================
 LICENSE
-==================================================
+=======================
 
 This project is licensed under the GNU General Public License v3.0 (GPL v3).
 
@@ -141,8 +131,8 @@ PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with 
 this program. If not, see <https://www.gnu.org/licenses/>.
 
-==================================================
+=======================
 CONTRIBUTING
-==================================================
+=======================
 
 Contributions are welcome! Open issues or create pull requests to improve this project.
