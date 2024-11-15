@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "type": [
+        "VerifiableCredential",
+        "MobileDriverLicense"
+    ],
+    "id": "urn:uuid:b02bea3f-6bd5-4583-98f9-d5baa9cf118d",
+    "issuer": "Government Authority",
+    "issuanceDate": "2024-11-14",
+    "expirationDate": "2034-11-12",
+    "credentialSubject": {
+        "id": "urn:uuid:b02bea3f-6bd5-4583-98f9-d5baa9cf118d",
+        "name": "John Doe",
+        "date_of_birth": "1990-01-01",
+        "address": "123 Main Street, Anytown, USA",
+        "license_number": "D12345678",
+        "biometric_data": {
+            "encrypted_data": "b09717c13eb363fb43ad398561f56461115190d4e5761082f7541871bbfd838f3fbeea8f347c5c6b0fad7e0550ab3b1e4a38cc9a62a7e1942e1efc36d77dd915d732d372893d700215929ae6f2eed0563ccdd5fc59958a6bcd80ccfd78ccd8a7e50e70396722568fa20f6312753e7a257bfc6f727bdad7f4105651db647fcbbef0ee4ddd03158850c5789459b3ff8aab58c2b028357524c6ae3b7e5f7263a7c9109ed5e51871ce026b4e9f4cb9127f994033636e2830c3e23d458890211acd2946b2b9b184f38bb1a5a5b133733811ca43d7e2c94971083ffb77ac333a00e0cbdbd6cf34a63566b333b2d983b2ce4685c3dbca653382e63a4bf599934412dcbed1ce4fd35635a2ef6ced09ad",
+            "key": "82bbd664ba1f7bd2be6a73f6a30b1a6559f435e2a1f746d1160fe8bda04074c5",
+            "iv": "54479aa48cdbcbc701d1e51cd7a0cd01"
+        }
+    },
+    "proof": {
+        "type": "RsaSignature2018",
+        "created": "2024-11-15T10:43:30.491669",
+        "verificationMethod": "https://example.com/keys/1",
+        "proofPurpose": "assertionMethod",
+        "jws": "9ec453ce5ca9002681a3ca82e85e49ce15f1932bd49ef7cd5758c1584f14887520de4c44726478f58b0e1ab7983444c5eefce3d0a82c0ffbd89dc7d8fadcb9ec873cc8bfd2461315e79e67caf791b4b29664b3fd44c16c8c154194ba766cdff32f19691946e661aa87d787503e58ac140705c4f3c031db07a3e2173fa0cad7821fe21397f379a0cfe8d87ace95a2b335e62fa2dbc504e6a14cb2c8a8f05227d0103e7c844bce0cafd796d702790c94d4ca84191ed4b5b01214db97216fdc161f9fb486f3be439e3543d28b8f5c5e54a19a4181c3679e2536911bfddfd368f071b3ab758d113aba1c445c1e25a3b21441d4f4375df19a4200e7b0abc3d6a69548"
+    }
+}

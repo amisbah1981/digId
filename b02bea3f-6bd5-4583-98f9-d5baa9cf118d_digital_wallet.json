@@ -1,0 +1,31 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "type": [
+        "VerifiableCredential",
+        "IDDocument"
+    ],
+    "id": "urn:uuid:b02bea3f-6bd5-4583-98f9-d5baa9cf118d",
+    "issuer": "Government Authority",
+    "issuanceDate": "2024-11-14",
+    "expirationDate": "2034-11-12",
+    "credentialSubject": {
+        "id": "urn:uuid:b02bea3f-6bd5-4583-98f9-d5baa9cf118d",
+        "name": "John Doe",
+        "date_of_birth": "1990-01-01",
+        "nationality": "USA",
+        "biometric_data": {
+            "encrypted_data": "18158a2a4d0e239e4a39ba4828c06e8b8cb1e400df0a0255110cd4ea1878c51650e91f9497fed129dd2a1385cb958b9a700f54e9cfe2e6d35fedc9c3614a4c41823e6da96b5a6775aabf6aa3d5ad59ea3d30b3a0287e041e2e81a08da52768d02ed7e439112d8e1b0537667cd1a5be2c2c8085f7782c6000a9be626e7f3a1905f88bde5ddd9181794c23eb45070c272edd51e5eb1938935b62bbd7c75881891997420d2906a1546ead297a67c86ead894e3eec9815fdc82df3ee925b7e6796725ba91bc7da721c619b79733679203aab748bd7331d1318a13049458a7b0353cd5ddebf3654b32e55780c16c3db64fbe7d5dccaef0cd595d3f389fc6d9ebed34e4b851edfbe0dee0f5f7aaa5c",
+            "key": "21994d77add24d26f20b580c54c841aedc2c4d58ce6120a7ad2c50b4eb7b7b4d",
+            "iv": "85c16d5c42e398708a83fc128551c0f9"
+        }
+    },
+    "proof": {
+        "type": "RsaSignature2018",
+        "created": "2024-11-15T10:28:47.659797",
+        "verificationMethod": "https://example.com/keys/1",
+        "proofPurpose": "assertionMethod",
+        "jws": "3b968ab6b5d3f0a02c153215053fba4689c501687d4521176c1d33866a55fc9fa921130461a157e2c618b6fb113127180d184418e725dce30aef6dbba04e0cdcefb7b2fee5be75db89b2214291b1caaba34bca48afbb083dddcfa5bafa04922f8ff975a38b137b269da6aae88ccca9d4c3804ba5ab8924aedd46643e7335a3df4f3473b9e7e288201f6248f170ad32d0e9abb12d058cf3e687024331795d63bafc1f2c24a54d91f33961caafdb743e9381f2839d87e967e35b4c4054daf1a337c33b5cb0436f37fa1da603ac87c8db7838e4cafdb671a1ff8689c63e71bf7a01e5a96a3ce01a9f4c809075a5e55ab90b1970aa40e0926e3e2fe37a4d32000369"
+    }
+}

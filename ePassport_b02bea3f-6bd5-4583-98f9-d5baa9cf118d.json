@@ -1,0 +1,32 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "type": [
+        "VerifiableCredential",
+        "ePassport"
+    ],
+    "id": "urn:uuid:b02bea3f-6bd5-4583-98f9-d5baa9cf118d",
+    "issuer": "Government Authority",
+    "issuanceDate": "2024-11-14",
+    "expirationDate": "2034-11-12",
+    "credentialSubject": {
+        "id": "urn:uuid:b02bea3f-6bd5-4583-98f9-d5baa9cf118d",
+        "name": "John Doe",
+        "date_of_birth": "1990-01-01",
+        "nationality": "USA",
+        "passport_number": "987654321",
+        "biometric_data": {
+            "encrypted_data": "06bf1f28c2484dce86e2b5d225b1ee1f4c18b7f02f26cf9067ef37183ea4430fc8e67a2111c2c9167934c740f09c75e1739c3ca5674b28bf819f6dcc8dd3544ded84152c9ee1a60cfc23ea1aa2c12df942983d7b8c7273d9f077c1816a57bae86374b23b535beeea52dfdd1ad1eb8181de79b85246f8fc42a54c2f3d71725b7ed033e793a0620701771603c3a712ab8841c54ed32fcda52f34bd7dc544a7212dae1414feccfacb0d92958ba0c0f79da256f8880b397a23c173bd12125c2835a4481ab1ba89bed30e8b448da8b5981edd041a31c49562714c47a284dbdd65a7ce182e51ab926586460f26096d2a488f428d9a367ee5a3c7c255d12f2758b1013a830b73c3960836430bead7f7",
+            "key": "35a67c9a366acaedb483aea98b5911e2d19b4afa25887633a529fc9c7cbb1001",
+            "iv": "9a8907cf768cd6aeadfd5ce89a9d587c"
+        }
+    },
+    "proof": {
+        "type": "RsaSignature2018",
+        "created": "2024-11-15T10:43:30.494670",
+        "verificationMethod": "https://example.com/keys/1",
+        "proofPurpose": "assertionMethod",
+        "jws": "46e8e6d13a8c317cc3a07d93b19095db74f649bace55500fa7ad394f58cbc3add123391626b56a7d918adbcbf4722aaeb096c79e9fb20a496005a2c04c818839b839206dbbfc9b43e41a04c4c2f601645eff3cef5a5ad80ca3574331da1c42cf35506f07de5f01ef5315eed5f8f1ab7ed7924925fc3b735ff99dcdc68e886f693a45a5693e1b954bdc0a0fcb6a1607143859564255bbd22096e3319d6806d66361c5a9de813651ce193fe93420d5eba5e2109f1f653e05ebe907846ded6d042d33e34f3e5b7f8b963b366680c2f75f90d1c8c84b354409196543983457cf3a926d63765a2b9b23b38d624460b25857f623fb4255632c6d77567c3a025ed27ea0"
+    }
+}
