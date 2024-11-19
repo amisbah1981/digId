@@ -1,0 +1,6 @@
+cryptography
+pillow
+qrcode
+pytest
+pytest
+pytest-cov
